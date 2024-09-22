@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <h1 id="header">INST 377 - LAB 4</h1>
+        <title>Lab 4</title>
+        <link rel="stylesheet", href="style.css">
+    </head>
+    <body>
+        <div class="boxes">
+            <form name="input_name" onsubmit="alert_me()">
+                <label>Name: </label>
+                <input type="text" id="name"> <input type="submit" value="Alert Me!"> </br>
+            </form>
+            <script type="text/javascript">
+                function alert_me() {
+                    alert("Hi " + document.input_name.name.value);
+                }
+            </script>
+        </div>
+        <div class="boxes">
+            <script type="text/javascript">
+                function change_color() {
+                    color = document.body.style.backgroundColor;
+                    if (color == "beige") {
+                        document.body.style.backgroundColor = "lightgreen"
+                    } else {
+                        document.body.style.backgroundColor = "beige";
+                    }
+                }
+            </script>
+            <button onclick="change_color()">
+                Change Color
+            </button>
+        </div>
+    </body>
+    <body>
+        <div class="boxes">
+            <form name="text_tester">
+                <label for="text-tester">Text Tester: </label>
+                <input type="text" id="text_input">
+                    <button onclick="validate_text()">Validate Text!</button>
+                </br>
+                <script type="text/javascript">
+                    function validate_text() {
+                        var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                        if (validation.test(document.text_tester.text_input.value)) {
+                            alert("Input text has special characters!");
+                        }
+                    }
+                </script>
+            </form>
+        </div>
+        <div class="boxes">
+            <button onclick="add_text()">Add Text</button>
+            <script>
+                function add_text() {
+                    var header = document.getElementById("header").innerText;
+                    document.getElementById("header").innerText = (header + " Add Text");
+                }
+            </script>
+        </div>
+    </body>
+</html>
